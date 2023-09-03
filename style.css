@@ -1,51 +1,10 @@
-/* Reset de estilos padrão */
-body, h1, h2, h3, p, ul, li {
-  margin: 0;
-  padding: 0;
+/* Estilo para a imagem responsiva */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-}
-
-header img {
-  max-width: 150px;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-}
-
-ul li {
-  margin-right: 20px;
-}
-
-ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-main {
-  padding: 20px 0;
-}
-
+/* Estilo para a seção de personagens */
 .chars {
   background-color: #fff;
   border-radius: 8px;
@@ -53,59 +12,15 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.filter {
+/* Estilos para os filtros */
+.filters input,
+.filters select {
   margin-right: 10px;
-  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.chars-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  margin-top: 20px;
-}
-
-.character {
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  padding: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.character img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.character h3 {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.character p {
-  margin-top: 5px;
-  font-size: 14px;
-}
-
-#load-more {
-  margin-top: 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#load-more:hover {
-  background-color: #555;
-}
-
+/* Estilos para o rodapé */
 footer {
   text-align: center;
   margin-top: 20px;
@@ -116,21 +31,4 @@ footer {
 
 footer p {
   margin: 0;
-}
-
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-  ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  ul li {
-    margin: 5px 0;
-  }
-
-  chars-container {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
 }

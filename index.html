@@ -4,45 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <link
       rel="shortcut icon"
       href="./assets/logo-min.svg"
       type="image/x-icon"
     />
-
     <title>Rick and Morty - API</title>
   </head>
   <body>
     <div class="container">
-      <header>
-        <img src="/assets/logo-min.svg" alt="rick and morty" />
-
-        <ul>
-          <li>
-            <a href="#">Personagens</a>
+      <header class="mt-3">
+        <img src="./assets/logo-min.svg" alt="rick and morty" />
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Personagens</a>
           </li>
-          <li>
-            <a href="#">Localizações</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Localizações</a>
           </li>
-          <li>
-            <a href="#">Episódios</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Episódios</a>
           </li>
         </ul>
       </header>
 
       <main>
-        <section class="chars">
+        <section class="chars mt-4">
           <img src="./assets/logo.svg" alt="" />
 
-          <div class="filters">
+          <div class="filters my-3">
             <input
               type="text"
               id="name"
               placeholder="Pesquise o personagem"
-              class="filter"
+              class="form-control"
             />
-            <select name="species" id="species" class="filter">
+            <select name="species" id="species" class="form-control mt-2">
+              <option value="" default>Espécie</option>
+              <option value="animal">Animal</option>
               <option value="" default>Especie</option>
               <option value="animal">Animal</option>
               <option value="alien">Alien</option>
@@ -54,30 +58,69 @@
               <option value="poopybutthole">Poopybutthole</option>
               <option value="robot">Robo</option>
             </select>
-            <select name="gender" id="gender" class="filter">
-              <option value="">Genero</option>
-              <option value="female">Feminino</option>
-              <option value="male">Masculino</option>
-              <option value="genderless">Sem Genero</option>
-              <option value="unknown">Desconhecido</option>
-            </select>
-            <select name="status" id="status" class="filter">
-              <option value="">Status</option>
-              <option value="alive">Vivo</option>
-              <option value="dead">Morto</option>
-              <option value="unknown">Desconhecido</option>
-            </select>
           </div>
 
-          <div class="chars-container"></div>
+          <div class="chars-container row"></div>
 
-          <button id="load-more">Carregar mais</button>
+          <div class="row">
+            <div class="col-12 text-center">
+              <button id="load-more" class="btn btn-primary">
+                Carregar mais
+              </button>
+            </div>
+          </div>
         </section>
       </main>
     </div>
-    <footer>
-      <p>By STEPHAN COSTA, 2023</p>
+
+    <!-- Modal para características do personagem -->
+    <div
+      class="modal fade"
+      id="characterModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="characterModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="characterModalLabel">
+              Características do Personagem
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="characterModalBody">
+            <!-- Conteúdo das características do personagem será inserido aqui -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-4">
+      <div class="container">
+        <p class="text-center">By STEPHAN COSTA, 2023</p>
+      </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/script.js"></script>
   </body>
 </html>
